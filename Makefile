@@ -2,8 +2,8 @@ MODULES=$(notdir $(wildcard src/*))
 
 default: $(MODULES)
 
-%: src/%
-	gcc -o $@ $</*.c
+%: src/% Makefile
+	gcc -g -Wall -Wno-unused-function -o $@ $</*.c
 
 clean:
 	rm -f $(MODULES) src/*/*.o
